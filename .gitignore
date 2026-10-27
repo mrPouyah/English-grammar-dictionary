@@ -1,0 +1,15 @@
+# The source content database and all credentials stay private. Never commit these.
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+*.dpapi
+.telegram_runtime/
+.backups/
+
+# Test artifacts derived from the private database (contain real answer ids).
+tests/expected_grades.json
+
+# OS / editor noise
+Thumbs.db
+desktop.ini
+.DS_Store

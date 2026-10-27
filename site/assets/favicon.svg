@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="English Grammar">
+  <rect width="64" height="64" rx="12" fill="#123f46"/>
+  <path d="M18 44V20h12c5 0 8 3 8 7s-3 7-8 7h-7v10h-5zm5-15h6c2 0 3-1 3-2s-1-2-3-2h-6v4z" fill="#d4e9e3"/>
+  <path d="M40 44l6-24h5l-6 24h-5z" fill="#74c6bb"/>
+</svg>
