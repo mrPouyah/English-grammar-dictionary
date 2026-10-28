@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="rtl" class="intro-enabled">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -10,6 +10,27 @@
 <link rel="icon" href="{{REL}}assets/favicon.svg" type="image/svg+xml">
 </head>
 <body>
+<div class="intro-screen" role="status" aria-live="polite" aria-label="Mr Pouyah English Academy loading">
+  <div class="intro-content">
+    <div class="intro-emblem" aria-hidden="true">
+      <svg viewBox="0 0 48 48" fill="none">
+        <path d="M8 11.5c6.2-2.2 11.6-1.1 16 2.8v25c-4.4-3.9-9.8-5-16-2.8v-25Z"/>
+        <path d="M40 11.5c-6.2-2.2-11.6-1.1-16 2.8v25c4.4-3.9 9.8-5 16-2.8v-25Z"/>
+        <path d="M13 18c3.1-.7 5.6-.3 7.5 1.1M13 23c3.1-.7 5.6-.3 7.5 1.1M35 18c-3.1-.7-5.6-.3-7.5 1.1M35 23c-3.1-.7-5.6-.3-7.5 1.1"/>
+      </svg>
+    </div>
+    <p class="intro-kicker">MR POUYAH</p>
+    <h1 class="intro-title"><span>English</span><span>Academy</span></h1>
+    <div class="intro-divider" aria-hidden="true"><span></span></div>
+    <p class="intro-caption">Learn with clarity. Speak with confidence.</p>
+    <div class="intro-progress" aria-hidden="true"><span></span></div>
+  </div>
+</div>
+<script>
+  window.setTimeout(function () {
+    document.documentElement.classList.add('intro-dismissed');
+  }, 5000);
+</script>
 <a class="skip" href="#main">پرش به محتوا</a>
 <header class="site">
   <div class="wrap">
