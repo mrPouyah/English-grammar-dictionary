@@ -683,3 +683,121 @@ footer.site p{margin:0}
   header.site,footer.site,.quiz,.lesson-nav,.controls{display:none}
   .lesson{border:none;padding:0}
 }
+
+
+/* --------------------------------------------------------- academy intro --- */
+.intro-screen{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  color:#F7F1E5;
+  background:
+    radial-gradient(ellipse at 50% 40%,rgba(167,126,67,.16),transparent 42%),
+    linear-gradient(145deg,#090D15 0%,#111827 52%,#090D15 100%);
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+html.intro-enabled .intro-screen{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+}
+html.intro-dismissed .intro-screen{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:opacity .9s ease,visibility .9s ease;
+}
+.intro-screen::before,.intro-screen::after{
+  position:absolute;
+  content:"";
+  width:min(78vw,660px);
+  aspect-ratio:1;
+  border:1px solid rgba(208,174,115,.12);
+  border-radius:50%;
+}
+.intro-screen::after{width:min(62vw,520px);border-color:rgba(208,174,115,.08)}
+.intro-content{
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  flex-direction:column;
+  padding:32px 24px;
+  text-align:center;
+  animation:intro-arrive 1.2s cubic-bezier(.2,.75,.25,1) both;
+}
+.intro-emblem{
+  display:grid;
+  place-items:center;
+  width:72px;
+  height:72px;
+  margin-bottom:25px;
+  border:1px solid rgba(208,174,115,.55);
+  border-radius:50%;
+  box-shadow:0 0 40px rgba(208,174,115,.12),inset 0 0 24px rgba(208,174,115,.05);
+  color:#D0AE73;
+}
+.intro-emblem svg{width:37px;height:37px;stroke:currentColor;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round}
+.intro-kicker{
+  margin:0 0 12px;
+  color:#D0AE73;
+  font-family:var(--font-en);
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.34em;
+}
+.intro-title{
+  display:flex;
+  flex-direction:column;
+  margin:0;
+  color:#F7F1E5;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(42px,8vw,76px);
+  font-weight:400;
+  line-height:.98;
+  letter-spacing:.015em;
+  text-shadow:0 5px 35px rgba(0,0,0,.24);
+}
+.intro-title span+span{margin-top:7px;color:#D0AE73;font-size:.78em;letter-spacing:.08em}
+.intro-divider{display:flex;align-items:center;gap:12px;width:110px;margin:27px 0 17px;color:#D0AE73}
+.intro-divider::before,.intro-divider::after{content:"";height:1px;flex:1;background:rgba(208,174,115,.4)}
+.intro-divider span{width:5px;height:5px;transform:rotate(45deg);background:#D0AE73}
+.intro-caption{
+  margin:0;
+  color:rgba(247,241,229,.7);
+  font-family:var(--font-en);
+  font-size:12px;
+  letter-spacing:.07em;
+}
+.intro-progress{
+  width:116px;
+  height:1px;
+  margin-top:39px;
+  overflow:hidden;
+  background:rgba(247,241,229,.16);
+}
+.intro-progress span{
+  display:block;
+  width:100%;
+  height:100%;
+  transform:scaleX(0);
+  transform-origin:left;
+  background:#D0AE73;
+  animation:intro-progress 5s linear forwards;
+}
+@keyframes intro-progress{to{transform:scaleX(1)}}
+@keyframes intro-arrive{
+  from{opacity:0;transform:translateY(16px)}
+  to{opacity:1;transform:translateY(0)}
+}
+html[dir="rtl"] .intro-progress span{transform-origin:right}
+@media(prefers-reduced-motion:reduce){
+  .intro-content{animation:none}
+  .intro-progress span{animation:none;transform:scaleX(1)}
+  html.intro-dismissed .intro-screen{transition:none}
+}
